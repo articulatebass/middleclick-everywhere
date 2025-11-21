@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "MiddleClick Everywhere",
+  "description": "Enable middle-click functionality on search suggestions and UI elements across multiple websites.",
+  "version": "0.1.0",
+
+  "permissions": ["storage"],
+
+  "action": {
+    "default_popup": "src/popup/popup.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["dist/content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
